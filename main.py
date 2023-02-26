@@ -16,10 +16,11 @@ player.set_position(0)
 comp = Paddle()
 comp.set_position(1)
 
+# movement
+
 screen.onkey(player.go_up, "w")
 screen.onkey(player.go_down, "s")
 
-#movement
 game_is_on = 1
 while game_is_on:
     screen.update()

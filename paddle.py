@@ -11,10 +11,12 @@ class Paddle(Turtle):
         self.shapesize(stretch_wid=5, stretch_len=1)
 
     def go_up(self):
-        self.goto(self.xcor(), self.ycor() + 20)
+        if self.position()[1] < 260:
+            self.goto(self.xcor(), self.ycor() + 20)
 
     def go_down(self):
-        self.goto(self.xcor(), self.ycor() - 20)
+        if self.position()[1] > -260:
+            self.goto(self.xcor(), self.ycor() - 20)
 
     def set_position(self, pos):
         self.goto(positions[pos])
