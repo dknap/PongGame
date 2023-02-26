@@ -9,7 +9,7 @@ screen.bgcolor("black")
 screen.listen()
 screen.tracer(0)
 
-# create player's paddle
+# create paddles
 player = Paddle()
 player.set_position(0)
 
