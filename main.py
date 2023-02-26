@@ -11,6 +11,10 @@ screen.tracer(0)
 
 # create player's paddle
 player = Paddle()
+player.set_position(0)
+
+comp = Paddle()
+comp.set_position(1)
 
 screen.onkey(player.go_up, "w")
 screen.onkey(player.go_down, "s")

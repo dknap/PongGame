@@ -1,14 +1,13 @@
 from turtle import Turtle
 
-UP = 90
-DOWN = -90
+positions = [(-370, 0), (360, 0)]
+pos = 0
 
 
 class Paddle(Turtle):
     def __init__(self):
         super().__init__()
         self.penup()
-        self.goto(-370, 0)
         self.color("white")
         self.shape("square")
         self.shapesize(stretch_wid=5, stretch_len=1)
@@ -18,3 +17,6 @@ class Paddle(Turtle):
 
     def go_down(self):
         self.goto(self.xcor(), self.ycor() - 20)
+
+    def set_position(self, pos):
+        self.goto(positions[pos])
