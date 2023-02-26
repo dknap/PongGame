@@ -26,15 +26,19 @@ ball = Ball()
 game_is_on = 1
 while game_is_on:
     ball.move()
-    screen.update()
-
-    # ball bouncing
-    if ball.distance(x=ball.xcor(), y=300) < 15 or ball.distance(x=ball.xcor(), y=-300) < 15:
+    # bounce the wall
+    if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce(ball.heading())
 
-    # detect collision with paddle
-    if ball.distance(x=-360, y=player.ycor()) < 15:
+    # detect collision with the paddle
+    if ball.distance(player) < 50 and ball.xcor() < -350:
         ball.shot(ball.heading())
 
+    # computer's move
+    comp.goto(380, ball.ycor())
+    if ball.distance(comp) < 50 and ball.xcor() > 360:
+        ball.shot(ball.heading())
+
+    screen.update()
 
 screen.exitonclick()

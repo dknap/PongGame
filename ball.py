@@ -13,11 +13,9 @@ class Ball(Turtle):
         print(self.heading())
 
     def bounce(self, angle):
-        print(angle)
-        self.setheading(360 - angle)
+        self.setheading(-angle)
 
     def shot(self, angle):
-        print(angle)
         self.setheading(180 - angle)
 
     def move(self):
