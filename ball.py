@@ -9,7 +9,8 @@ class Ball(Turtle):
         self.color("white")
         self.shape("circle")
         self.speed("slowest")
-        self.setheading(randint(180, 260))
+        self.velocity = 3
+        self.setheading(randint(20, 40))
         print(self.heading())
 
     def bounce(self, angle):
@@ -19,4 +20,4 @@ class Ball(Turtle):
         self.setheading(180 - angle)
 
     def move(self):
-        self.forward(3)
+        self.forward(self.velocity)

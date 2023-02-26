@@ -35,21 +35,23 @@ while game_is_on:
     # detect collision with the paddle
     if ball.distance(player) < 50 and ball.xcor() < -350:
         ball.shot(ball.heading())
+        ball.velocity += 1
 
     # computer's move
     comp.goto(380, ball.ycor())
     if ball.distance(comp) < 50 and ball.xcor() > 360:
         ball.shot(ball.heading())
+        ball.velocity += 1
 
     # ball goes out of bounds
     if ball.xcor() < -380:
-        print("computer win")
         scoreboard.computer_win()
         ball.goto(0, 0)
+        ball.velocity = 3
     if ball.xcor() > 380:
-        print("player win")
         scoreboard.player_win()
         ball.goto(0, 0)
+        ball.velocity = 3
 
     screen.update()
 
