@@ -16,5 +16,9 @@ class Ball(Turtle):
         print(angle)
         self.setheading(360 - angle)
 
+    def shot(self, angle):
+        print(angle)
+        self.setheading(180 - angle)
+
     def move(self):
         self.forward(3)
