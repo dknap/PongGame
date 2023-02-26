@@ -28,4 +28,15 @@ while game_is_on:
     ball.move()
     screen.update()
 
+    # ball bouncing
+    if ball.distance(x=ball.xcor(), y=300) < 15 or ball.distance(x=ball.xcor(), y=-300) < 15:
+        ball.bounce(ball.heading())
+
+
+    # detect collision with paddle
+    # if ball.distance(player) < 22:
+    #     print("ball should bounce")
+    #     game_is_on = False
+
+
 screen.exitonclick()
