@@ -1,5 +1,5 @@
 from turtle import Turtle
-import random
+from random import randint
 
 
 class Ball(Turtle):
@@ -9,7 +9,7 @@ class Ball(Turtle):
         self.color("white")
         self.shape("circle")
         self.speed("slowest")
-        self.setheading(random.randint(180, 260))
+        self.setheading(randint(180, 260))
         print(self.heading())
 
     def bounce(self, angle):
