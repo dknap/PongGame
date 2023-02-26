@@ -1,6 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 
 # screen setting
 screen = Screen()
@@ -23,6 +24,7 @@ screen.onkey(player.go_down, "s")
 
 # game-flow
 ball = Ball()
+scoreboard = Scoreboard()
 game_is_on = 1
 while game_is_on:
     ball.move()
@@ -38,6 +40,16 @@ while game_is_on:
     comp.goto(380, ball.ycor())
     if ball.distance(comp) < 50 and ball.xcor() > 360:
         ball.shot(ball.heading())
+
+    # ball goes out of bounds
+    if ball.xcor() < -380:
+        print("computer win")
+        scoreboard.computer_win()
+        ball.goto(0, 0)
+    if ball.xcor() > 380:
+        print("player win")
+        scoreboard.player_win()
+        ball.goto(0, 0)
 
     screen.update()
 
